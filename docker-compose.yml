@@ -1,0 +1,19 @@
+version: '3'
+services:
+  nginx-proxy-d:
+    image: 'jc21/nginx-proxy-manager:latest'
+    container_name: nginx-proxy-d
+    restart: unless-stopped
+    ports:
+      - '80:80'
+      - '81:81'
+      - '433:443'
+    volumes:
+      - ./data:/data
+      - ./letsencrypt:/etc/letsencrypt
+    networks:
+      - myserver-base-net
+
+networks:
+  myserver-base-net:
+    external: true

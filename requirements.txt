@@ -1,8 +1,6 @@
 fastapi
 uvicorn
 sqlalchemy
-databases
+passlib[bcrypt]
 alembic
-pydantic
-bcrypt
-python-jose
+bcrypt == 4.0.1
